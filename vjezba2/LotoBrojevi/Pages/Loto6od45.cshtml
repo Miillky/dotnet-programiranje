@@ -1,0 +1,16 @@
+﻿@page
+@model Loto7od39Model
+@{
+    ViewData["Title"] = "Loto 6 od 45";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Loto 6 od 45</h1>
+    <ul>
+        @foreach (var number in @Model.Numbers) {
+            <li>
+                @number
+            </li>
+        }
+    </ul> 
+</div>
