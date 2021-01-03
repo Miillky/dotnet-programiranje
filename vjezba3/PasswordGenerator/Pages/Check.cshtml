@@ -1,0 +1,29 @@
+@page
+@model CheckModel
+@{
+    ViewData["Title"] = "Check Password";
+}
+
+@if (ViewData.ContainsKey("password")) {
+  <div class="alert alert-info" role="alert">
+    @ViewData["password"]
+  </div>
+}
+
+<div class="col-lg-6 mb-4">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Password check</h6>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password you want to check" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Check now</button>
+      </form>
+    </div>
+  </div>
+</div>
