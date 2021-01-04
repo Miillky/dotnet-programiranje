@@ -1,0 +1,27 @@
+@page
+@model IndexModel
+@{
+  ViewData["Title"] = "Postovi";
+}
+
+<form>
+    <div class="form-group">
+        <label for="search">Pretraga:</label>
+        <input type="text" name="search" class="form-control" placeholder="Upišite tekst za pretragu...">
+    </div>
+</form>
+
+<div class="text-center">
+    <h1 class="display-4">
+        Postovi
+    </h1>
+
+    @foreach (var post in @Model.Posts) {
+        <h4>@post.Description (@post.Likes)</h4>
+        <a href="@post.URL">@post.URL</a>
+        <form method="post" class="d-inline">
+            <a asp-page="/Posts/Edit" asp-route-id="@post.Id" class="btn btn-primary btn-sm">Edit</a>
+            <input type="submit" asp-page-handler="Delete" asp-route-id="@post.Id" class="btn btn-danger btn-sm" onclick="return confirm('Jeste li sigurni da želite obrisati?');" value="Obriši">
+        </form>
+    }
+</div>
