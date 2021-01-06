@@ -1,0 +1,17 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Korisnici";
+}
+
+<div class="text-center">
+    <h1 class="display-4">
+        Korisnici
+    </h1>
+</div>
+
+<ul>
+    @foreach(var user in @Model.Users){
+        <li>@user.Username @user.Name @user.Surname</li>
+    }
+</ul>

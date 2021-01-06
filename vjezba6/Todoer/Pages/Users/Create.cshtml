@@ -1,0 +1,32 @@
+@page
+@model CreateModel
+@{
+  ViewData["Title"] = "Korisnici";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Unos novog korisnika</h2>
+            <form method="post">
+                <div class="form-group">
+                    Username:
+                    <input asp-for="User.Username">
+                </div>
+                <div class="form-group">
+                    Lozinka:
+                    <input asp-for="User.Password">
+                </div>
+                <div class="form-group">
+                    Ime:
+                    <input asp-for="User.Name">
+                </div>
+                <div class="form-group">
+                    Prezime:
+                    <input asp-for="User.Surname">
+                </div>
+                <input type="submit" value="Unesi">
+            </form>
+          </div>
+    </div>
+</div>
