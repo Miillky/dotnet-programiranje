@@ -1,0 +1,13 @@
+@model IEnumerable<InternetShop.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Artikli na akciji</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<partial name="_ProductsTable.cshtml" for="@Model">
